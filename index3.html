@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registration Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="mystyle3.css">
+    <link rel="icon" type="image/ico" href="https://cdn2.iconfinder.com/data/icons/social-icons-color/512/google-2-512.png">
+    <script src="main.js"></script>
+</head>
+<script type="text/javascript">
+    function ValidateRegistrationForm() {
+        var name = document.getElementById('name').value;
+        var last = document.getElementById('Last').value;
+        var email = document.getElementById('Email').value;
+        var pass = document.getElementById('Password').value;
+        var reenter = document.getElementById('reenter').value;
+    if(name==""){
+        alert("Please enter your First Name");
+        return false;
+    }
+    if(last==""){
+        alert("Please enter your Last Name");
+        return false;
+    }
+    if(email==""){
+        alert("Please enter your valid Email Address");
+        return false;
+    }
+    if(email.indexOf("@",0)<0){
+        alert("Please enter valid Email Address with @");
+        return false;
+    }
+    if(email.indexOf(".com",0)<0){
+        alert("Please enter valid Email Address");
+        return false;
+    }
+    if(email.indexOf("gmail","hotmail","yahoo","outlook",0)<0){
+        alert("Please enter valid Email Address with a proper Mail Service Provider");
+        return false;
+    }
+    if(pass==""){
+        alert("Please enter Password");
+        return false;
+    }
+    if(reenter!=pass){
+        alert("Check your Re-entered Password");
+        return false;
+    }
+    else{
+        return true;
+    }
+    
+    }
+</script>    
+<body>
+    <div class="signup-box"><fieldset>
+        <legend><h1>Signup</h1></legend>
+        <form action="register.php" onsubmit="return ValidateRegistrationForm();" method="POST">
+            <p>First Name</p>
+            <input type="text" name=""  placeholder="First Name" id="name"><br><br>
+            <p>Last Name</p>
+            <input type="text" name=""  placeholder="Last Name"id="last"><br><br>
+            <p>Email ID</p>
+            <input type="text" name=""  placeholder="Enter Email ID" id="email"><br><br>
+            <p>Password</p>
+            <input type="password" name=""  placeholder="Enter Password" id="password"><br><br>
+            <p>Re-enter Password</p>
+            <input type="password" name=""  placeholder="Re-enter Password" id="reenter"><br><br>
+            <input type="submit" name="" value="Signup">
+        </form>
+        </fieldset>
+    </div>
+
+</body>
+</html>
